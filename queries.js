@@ -95,3 +95,10 @@ process.stdout.write('\x1Bc');
 //   .returning(['id', 'name'])
 //   .then(results => console.log(results))
 //   .catch( err => console.log( err ) );
+
+// 10. Create three restaurants and return id and name
+knex('restaurants')
+  .insert([ {name: 'Byt Cafe', borough: 'Brooklyn', cuisine: 'coffee', address_building_number: '123', address_street: 'Atlantic Avenue', address_zipcode: '11231'}, {name: 'Bt Cafe', borough: 'Brooklyn', cuisine: 'coffee', address_building_number: '123', address_street: 'Atlantic Avenue', address_zipcode: '11231'}, {name: 'B Cafe', borough: 'Brooklyn', cuisine: 'coffee', address_building_number: '123', address_street: 'Atlantic Avenue', address_zipcode: '11231'} ])
+  .returning(['id', 'name'])
+  .then(results => console.log(results))
+  .catch( err => console.log( err ) );
