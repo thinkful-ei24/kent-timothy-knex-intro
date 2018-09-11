@@ -110,7 +110,14 @@ process.stdout.write('\x1Bc');
 //   .catch( err => console.log( err ) );
 
 // 12. Delete by id
-knex('grades')
-  .where({id: 10})
+// knex('grades')
+//   .where({id: 10})
+//   .del()
+//   .then(results => console.log(results));
+
+// 13. A blocked delete
+knex('restaurants')
+  .where({id: 22})
   .del()
-  .then(results => console.log(results));
+  .then(results => console.log(results))
+  .catch( err => console.log( err ) );
