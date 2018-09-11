@@ -103,8 +103,14 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results))
 //   .catch( err => console.log( err ) );
 
-knex('restaurants')
-  .update({name: 'DJ Reynolds Pub and Restaurant'})
-  .where({nyc_restaurant_id: '30191841'})
-  .then(results => console.log(results))
-  .catch( err => console.log( err ) );
+// knex('restaurants')
+//   .update({name: 'DJ Reynolds Pub and Restaurant'})
+//   .where({nyc_restaurant_id: '30191841'})
+//   .then(results => console.log(results))
+//   .catch( err => console.log( err ) );
+
+// 12. Delete by id
+knex('grades')
+  .where({id: 10})
+  .del()
+  .then(results => console.log(results));
