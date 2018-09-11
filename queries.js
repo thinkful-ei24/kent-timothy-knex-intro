@@ -56,10 +56,28 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results));
 
 // 7. Italian restaurants in one of several zip codes
-knex('restaurants')
-  .select('id', 'name')
-  .where({cuisine: 'Italian'})
-  .whereIn('address_zipcode', ['10012', '10013', '10014'])
-  .orderBy('name', 'asc')
-  .limit(5)
-  .then(results => console.log(results))
+// knex('restaurants')
+//   .select('id', 'name')
+//   .where({cuisine: 'Italian'})
+//   .whereIn('address_zipcode', ['10012', '10013', '10014'])
+//   .orderBy('name', 'asc')
+//   .limit(5)
+//   .then(results => console.log(results));
+
+// 8. Create a restaurant
+// knex('restaurants')
+//   .insert({
+//     name: 'Byte Cafe', 
+//     borough: 'Brooklyn', 
+//     cuisine: 'coffee', 
+//     address_building_number: '123', 
+//     address_street: 'Atlantic Avenue', 
+//     address_zipcode: '11231'
+//   })
+//   .then(results => console.log(results))
+//   .catch( err => console.log( err ) );
+
+// knex('restaurants')
+//   .select()
+//   .where({name: 'Byte Cafe'})
+//   .then(results => console.log(results))
