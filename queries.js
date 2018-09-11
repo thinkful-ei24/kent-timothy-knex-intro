@@ -81,3 +81,17 @@ process.stdout.write('\x1Bc');
 //   .select()
 //   .where({name: 'Byte Cafe'})
 //   .then(results => console.log(results))
+
+// 9. Create a restaurant and return id and name
+// knex('restaurants')
+//   .insert({
+//     name: 'Bit Cafe', 
+//     borough: 'Brooklyn', 
+//     cuisine: 'coffee', 
+//     address_building_number: '123', 
+//     address_street: 'Atlantic Avenue', 
+//     address_zipcode: '11231'
+//   })
+//   .returning(['id', 'name'])
+//   .then(results => console.log(results))
+//   .catch( err => console.log( err ) );
