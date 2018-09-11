@@ -50,7 +50,16 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results));
 
 // 6. Count of Thai restaurants in zip code
+// knex('restaurants')
+//   .count()
+//   .where({cuisine: 'Thai', address_zipcode: '11372'})
+//   .then(results => console.log(results));
+
+// 7. Italian restaurants in one of several zip codes
 knex('restaurants')
-  .count()
-  .where({cuisine: 'Thai', address_zipcode: '11372'})
-  .then(results => console.log(results));
+  .select('id', 'name')
+  .where({cuisine: 'Italian'})
+  .whereIn('address_zipcode', ['10012', '10013', '10014'])
+  .orderBy('name', 'asc')
+  .limit(5)
+  .then(results => console.log(results))
