@@ -45,8 +45,12 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results));
 
 // 5. Count of restaurants
-knex('restaurants')
-  .count()
-  .then(results => console.log(results));
+// knex('restaurants')
+//   .count()
+//   .then(results => console.log(results));
 
 // 6. Count of Thai restaurants in zip code
+knex('restaurants')
+  .count()
+  .where({cuisine: 'Thai', address_zipcode: '11372'})
+  .then(results => console.log(results));
