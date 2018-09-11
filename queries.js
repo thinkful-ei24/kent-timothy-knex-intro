@@ -37,3 +37,16 @@ process.stdout.write('\x1Bc');
 //   .where({cuisine: 'Italian'})
 //   .limit(10)
 //   .then(results => console.log(results));
+
+// 4. Count of Thai restaurants
+// knex('restaurants')
+//   .count()
+//   .where({cuisine: 'Thai'})
+//   .then(results => console.log(results));
+
+// 5. Count of restaurants
+knex('restaurants')
+  .count()
+  .then(results => console.log(results));
+
+// 6. Count of Thai restaurants in zip code
